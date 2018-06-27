@@ -15,9 +15,18 @@ global
     # cmake-options -DKDE4_BUILD_TESTS=TRUE -DLIB_SUFFIX=64
     cmake-options -DBUILD_TESTING=TRUE -DCMAKE_BUILD_TYPE=Debug -DCMAKE_INSTALL_LIBDIR=lib -DLIB_SUFFIX=64
     
-    make-options -j4
+    make-options -j10
     stop-on-failure true
+
 end global
+
+options kdemultimedia
+    ignore-modules kwave
+end options
+
+options frameworks
+    ignore-modules kdewebkit kdelibs4support
+end options
 
 options kdelibs4support
     cmake-options -DOPENSSL_INCLUDE_DIR=/usr/include/openssl-1.0
@@ -26,6 +35,27 @@ end options
 options qca
     cmake-options -DOPENSSL_INCLUDE_DIR=/usr/include/openssl-1.0
 end options
+
+options libkface
+    cmake-options -DENABLE_OPENCV3=on
+end options
+
+options kf5-base-applications
+    ignore-modules konqueror
+end options
+
+options kdeaccessibility
+    ignore-modules simon
+end options
+
+options kdeutils
+    ignore-modules kgpg
+end options
+
+options kdegames
+    ignore-modules kpat
+end options
+
 
 # Instead of specifying modules here, the current best practice is to refer to
 # KF5 module lists maintained with kdesrc-build by the KF5 developers. As new
