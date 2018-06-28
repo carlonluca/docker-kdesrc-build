@@ -1,4 +1,4 @@
-FROM ubuntu:17.10
+FROM ubuntu:18.10
 MAINTAINER Mathieu Tarral <mathieu.tarral@gmail.com>
 
 # FRAMEWORKS            |       BUILD DEPENDENCY
@@ -51,8 +51,27 @@ RUN apt-get update && \
                         libvlc-dev libvlccore-dev \
                         libgstreamer-plugins-base1.0-dev \
                         xsltproc \
-                        qtbase5-private-dev \
-                        libnm-glib-dev modemmanager-dev && \
+                        qtbase5-private-dev libqt5webenginewidgets5 \
+                        libssl1.0-dev \
+                        qtquickcontrols2-5-dev \
+			libqrencode-dev liblmdb-dev libnm-dev libattr1-dev libaccounts-qt5-dev \
+                        libsignon-qt5-dev \
+                        libaccounts-glib-dev qml-module-org-kde-kquickcontrols qml-module-org-kde-kquickcontrolsaddons \
+                        intltool \
+                        libassuan-dev \
+                        gpgsm liblcms2-dev libexiv2-dev libgphoto2-dev libclang-dev llvm-dev libsane-dev \
+                        libpam0g-dev \
+                        libgrantlee5-dev \
+                        libxapian-dev libxcb-image0-dev libqca-qt5-2-dev libxcb-xtest0-dev libpulse-dev libcanberra-dev \
+                        libxcb-damage0-dev libxcb-composite0-dev libxcb-cursor-dev libxcb-icccm4-dev libxcb-dpms0 signond-dev libvncserver-dev libmission-control-plugins-dev libsignon-glib-dev \
+                        libqt5sensors5-dev libqt5texttospeech5-dev libxkbfile-dev libxt-dev libasound2-dev libsphinxbase-dev libqwt-dev libqwt-qt5-dev \
+                        libfreetype6-dev libfontconfig-dev libmtdev-dev libevdev-dev libwacom-dev graphviz \
+                        texinfo libxtst-dev libgconf2-dev libpwquality-dev libxcb-dpms0-dev \
+                        libopencv-dev libeigen3-dev libappstreamqt-dev \
+                        libgtk2.0-dev libgtk-3-dev qtmultimedia5-dev libraw-dev \
+                        libhunspell-dev libtelepathy-qt5-dev libakonadi-dev libarchive-dev libsamplerate0-dev libdiscid-dev libmlt-dev libmlt++-dev libflac++-dev libflac-dev libsndfile1-dev libid3-3.8.3-dev \
+                        libavcodec-dev libavfilter-dev libavformat-dev libavdevice-dev libavutil-dev libswscale-dev libpostproc-dev libtag1-dev libaudiofile-dev libopenal-dev libcdparanoia-dev \
+                        libnm-glib-dev modemmanager-dev bash-completion && \
     useradd -d /home/kdedev -m kdedev && \
     mkdir /work /qt && \
     chown kdedev /work /qt
