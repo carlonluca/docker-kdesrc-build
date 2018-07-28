@@ -25,7 +25,7 @@ options kdemultimedia
 end options
 
 options frameworks
-    ignore-modules kdewebkit kdelibs4support
+    ignore-modules kdewebkit
 end options
 
 options kdelibs4support
