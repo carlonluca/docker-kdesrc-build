@@ -81,6 +81,7 @@ def run_kdesrc_build(template, auto_rm_enabled, display, vnc_enabled, qt_dir, co
         '-v', '{}:/work'.format(host_mnt_dir),
         '-v', __SCRIPT_CUR_DIR + '/kdesrc-buildrc:/home/kdedev/.kdesrc-buildrc',
         '-v', __SCRIPT_CUR_DIR + '/bashrc:/home/kdedev/.bashrc',
+        '-v', __SCRIPT_CUR_DIR + '/build.sh:/home/kdedev/build.sh',
     ])
     subp_cmd.extend(xsocket)
     subp_cmd.extend(vnc)
